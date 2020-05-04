@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% load static %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Jonas Zuckerman">
-  <meta name="generator" content="">
-  <title>Dykast Photography · Blog</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
+  <title>Dykast Photography · Blog</title>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -17,15 +16,15 @@
 <body data-gr-c-s-loaded="true">
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Dykast Photography</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Dykast Photography</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link " href="#">Twitter</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
-          <a class="nav-item nav-link active" href="#">Blog</a>
+          <a class="nav-item nav-link " href="https://www.instagram.com/jonasz_trentu/">Instagram</a>
+          <a class="nav-item nav-link" href="{% static 'FINAL Resume for Training coordinator.pdf' %}">Resume</a>
+          <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
         </div>
       </div>
     </nav>
@@ -36,7 +35,8 @@
     <div class="container">
 
     <h1 class="text-centre pt-3"> Welcome to the Dykast Photography Blog</h1>
-    <br />
+    <p class="lead text-muted">Hey, my name is Jonas and I love taking people's photos. Below you will find a collection of my past work. Those featured in these photographs were asked permisson before they were used. </p>
+
     <br />
     <h2>Latest post</h2>
     <hr />
@@ -47,12 +47,12 @@
         <div class="row">
           {% for blog in blogs.all %}
           <div class="container col-md-4">
-            <a href=""><h3> {{ blog.title }} </h3></a>
-            <p> {{ blog.pub_date }} </p>
+            <a href="{% url 'detail' blog.id %}"><h3> {{ blog.title }} </h3></a>
+            <p>{{ blog.pub_date_clean }}</p>
             <br />
             <img class="card-img-top" src="{{ blog.image.url }}" />
               <div class="card-body">
-                <p class="card-text">{{ blog.body }}</p>
+                <p class="card-text">{{ blog.summary }}</p>
               </div>
           </div>
           {% endfor %}
