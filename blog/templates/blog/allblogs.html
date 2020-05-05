@@ -48,7 +48,7 @@
           {% for blog in blogs.all %}
           <div class="container col-md-4">
             <a href="{% url 'detail' blog.id %}"><h3> {{ blog.title }} </h3></a>
-            <p>{{ blog.pub_date_clean }}</p>
+            <p>{{ blog.pub_date_clean }} by <a href="#">{{ blog.author }}</a></p>
             <br />
             <img class="card-img-top" src="{{ blog.image.url }}" />
               <div class="card-body">
