@@ -92,40 +92,31 @@
         From the Firehose
       </h3>
 
-      <div class="blog-post">
-        <h2 class="blog-post-title">Sample blog post</h2>
-        <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
       <div class="album py-5 bg-light">
         <div class="container">
 
           <div class="row">
             {% for blog in blogs.all %}
-            <div class="blog-post">
+            <div class="blog-post text-center">
               <h2 href="{% url 'detail' blog.id %}" class="blog-post-title"> {{ blog.title }} </h2>
               <p class="blog-post-meta"> {{ blog.pub_date_clean }} by <a href="#">{{ blog.author }}</a></p>
               <br />
-            <div class="album py-5 bg-light">
-              <div class="container">
-              <img class="card-img-top" src="{{ blog.image.url }}" />
-                <div class="card-body">
-                  <p>{{ blog.summary }}</p>
+              <div class="album py-5 bg-light">
+                  <div class="container">
+                    <p>{{ blog.summary }}</p>
+                  </div>
                 </div>
-              </div>
-
-            </div>
-
             </div>
             {% endfor %}
           </div>
 
+        </div>
       </div>
     </div>
-        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-
   </div><!-- /.blog-post -->
 
       <div class="blog-post">
-        <h2 class="blog-post-title">Another blog post</h2>
+        <h2 href="{% url 'detail' blog.id %}" class="blog-post-title"> {{ blog.title }} </h2>
         <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
 
         <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>

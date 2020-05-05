@@ -11,4 +11,5 @@ def detail(request, blog_id):
     return render(request, 'blog/detail.html', {'blog':detailblog})
 
 def possiblechange(request):
-    return render(request, 'blog/possiblechange.html')
+    blogs = Blog.objects
+    return render(request, 'blog/possiblechange.html', {'blogs':blogs})
