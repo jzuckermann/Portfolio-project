@@ -13,8 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900">
 </head>
 
-<body data-gr-c-s-loaded="true">
-  <header>
+<header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="{% url 'home' %}">Dykast Photography</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,29 +59,41 @@
   </div>
 
   <div class="row mb-2">
+
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
-          <h3 class="mb-0">Featured post</h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
+          <strong class="d-inline-block mb-2 text-primary">Past Events</strong>
+          <h3 class="mb-0">Past Events & Clientele</h3>
+          <div class="mb-1 text-muted">Events:</div>
+          <p class="card-text mb-auto">
+            <ul>
+              <li>Orientation Week 2019/20 @Trent University</li>
+            </ul>
+            </p>
+          <div class="mb-1 text-muted">Clientele:</div>
+            <ul>
+              <li>Trent African Caribbean Students' Union</li>
+              <li>Trent Orientations'</li>
+              <li></li>
+            </ul>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+
+    <div class="col-md-6"><!-- /.Client-Review -->
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Design</strong>
-          <h3 class="mb-0">Post title</h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
+          <strong class="d-inline-block mb-2 text-success">Client Review</strong>
+          <h3 class="mb-0">Rhonda Smith, J.D., LL.M.</h3>
+          <div class="mb-1 text-muted">Nov 17, 2019</div>
+          <p class="mb-auto">"Jonas demonstrated professionalism,tact, perseverance and great skill in how he manoeuvred between the four rooms, made everyone feel comfortable being photographed, and showed great consideration and patience in employing his craft."</p>
         </div>
       </div>
     </div>
+
   </div>
+
 </div>
 
 <main role="main" class="container">
@@ -91,55 +102,17 @@
       <h3 class="pb-4 mb-4 font-italic border-bottom">
         From the Firehose
       </h3>
-
-      <div class="album py-5 bg-light">
-        <div class="container">
-
-          <div class="row">
-            {% for blog in blogs.all %}
-            <div class="blog-post text-center">
-              <h2 href="{% url 'detail' blog.id %}" class="blog-post-title"> {{ blog.title }} </h2>
-              <p class="blog-post-meta"> {{ blog.pub_date_clean }} by <a href="#">{{ blog.author }}</a></p>
-              <br />
-              <div class="album py-5 bg-light">
-                  <div class="container">
-                    <p>{{ blog.summary }}</p>
-                  </div>
-                </div>
-            </div>
-            {% endfor %}
-          </div>
-
+      <div class="blog-post">
+        {% for blog in blogs.all %}
+        <div class="blog-post">
+          <h2 href="{% url 'detail' blog.id %}" class="blog-post-title"> {{ blog.title }} </h2>
+          <p class="blog-post-meta"> {{ blog.pub_date_clean }} by <a href="#">{{ blog.author }}</a></p>
+            <p>{{ blog.summary }}</p>
         </div>
+        {% endfor %}
       </div>
     </div>
   </div><!-- /.blog-post -->
-
-      <div class="blog-post">
-        <h2 href="{% url 'detail' blog.id %}" class="blog-post-title"> {{ blog.title }} </h2>
-        <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
-
-        <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-        <blockquote>
-          <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-        </blockquote>
-        <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-        <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-      </div><!-- /.blog-post -->
-
-      <div class="blog-post">
-        <h2 class="blog-post-title">New feature</h2>
-        <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
-
-        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <ul>
-          <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-          <li>Donec id elit non mi porta gravida at eget metus.</li>
-          <li>Nulla vitae elit libero, a pharetra augue.</li>
-        </ul>
-        <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-        <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-      </div><!-- /.blog-post -->
 
       <nav class="blog-pagination">
         <a class="btn btn-outline-primary" href="#">Older</a>
@@ -172,14 +145,6 @@
         </ol>
       </div>
 
-      <div class="p-4">
-        <h4 class="font-italic">Elsewhere</h4>
-        <ol class="list-unstyled">
-          <li><a href="#">GitHub</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
-        </ol>
-      </div>
     </aside><!-- /.blog-sidebar -->
 
   </div><!-- /.row -->
