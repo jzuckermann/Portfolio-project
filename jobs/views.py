@@ -8,3 +8,9 @@ def home(request):
 
 def theme(request):
     return render(request, 'jobs/theme.html')
+
+def login(request):
+    return render(requeset, 'jobs/login.html')
+
+def register(request):
+    return render(request, 'jobs/register.html')
