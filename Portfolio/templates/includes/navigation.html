@@ -12,7 +12,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+            <a class="navbar-brand" href="javascript:void(0)">DYKAST PHOTOGRAPHY</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -23,6 +23,9 @@
 
             {% if user.is_authenticated %}
             <ul class="navbar-nav ml-auto">
+              <li class="nav-item nav-link mt-3" href="https://www.facebook.com/JonasDykastZuckerman">Facebook</li>
+              <li class="nav-item nav-link mt-3" href="https://www.instagram.com/jonasz_trentu/">Instagram</li>
+              <li class="nav-item nav-link mt-3" href="{% static 'Resume for Photography.pdf' %}">Resume</li>
               <li class="search-bar input-group">
                 <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
                   <span class="d-lg-none d-md-block">Search</span>

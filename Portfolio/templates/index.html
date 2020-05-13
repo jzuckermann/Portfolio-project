@@ -11,29 +11,10 @@
 {% block content %}
 {% load static %}
 <body data-gr-c-s-loaded="true">
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url 'home' %}">Dykast Photography</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link " href="https://www.facebook.com/JonasDykastZuckerman">Facebook</a>
-          <a class="nav-item nav-link " href="https://www.instagram.com/jonasz_trentu/">Instagram</a>
-          <a class="nav-item nav-link" href="{% static 'Resume for Photography.pdf' %}">Resume</a>
-          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
-          <a class="nav-item nav-link" href="{% url 'possiblechange' %}">Blog?</a>
-          <a class="nav-item nav-link" href="{% url 'login' %}">login</a>
-          <a class="nav-item nav-link" href="{% url 'register' %}">register</a>
-        </div>
-      </div>
-    </nav>
-  </header>
 
   <main role="main dark>
 
-    <section class="jumbotron text-center">
+    <div class="jumbotron text-center">
       <div class="container text-center dark">
         <h1>Hi Welcome to Dykast Photography</h1>
         <p class="lead text-muted">Hey, my name is Jonas and I love taking people's photos. Below you will find a collection of my past work. All individuals displayed on this site consented to use of their photos. </p>
@@ -41,7 +22,7 @@
         </p>
         <img class="fluid-image" src="{% static "Jonas_Portfolio.png" %}" height="500" />
       </div>
-    </section>
+    </div>
 
     <div class="album py-5 bg-dark">
       <div class="container">
