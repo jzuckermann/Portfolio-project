@@ -25,8 +25,6 @@ urlpatterns = [
     path('', jobs.views.home, name='home'),
     path('', include("authentication.urls")),
     path('home/logout', include("app.urls")),
-    path('home/login', jobs.views.login, name='login'),
-    path('home/register', jobs.views.register, name='register'),
     path('blog/', include('blog.urls')),
     path('theme/', jobs.views.theme),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
