@@ -25,7 +25,7 @@ urlpatterns = [
     path('', jobs.views.home, name='home'),
     path('', include("authentication.urls")),
     path('home/login', include("app.urls")),
-    path('home/', jobs.views.home),
+    path('home/', jobs.views.home, name='logout'),
     path('home/login', jobs.views.login, name='login'),
     path('home/register', jobs.views.register, name='register'),
     path('blog/', include('blog.urls')),
