@@ -18,15 +18,16 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 import jobs.views
+import app.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', jobs.views.home, name='home'),
     path('', include("authentication.urls")),
-    path('', include("app.urls")),
+    path('home/login', include("app.urls")),
     path('home/', jobs.views.home),
-    path('blog/', include('blog.urls')),
-    path('theme/', jobs.views.theme),
     path('home/login', jobs.views.login, name='login'),
     path('home/register', jobs.views.register, name='register'),
+    path('blog/', include('blog.urls')),
+    path('theme/', jobs.views.theme),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
