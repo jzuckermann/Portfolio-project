@@ -7,9 +7,10 @@ from django.template import loader
 from django.http import HttpResponse
 from django import template
 
+
 @login_required(login_url="/login/")
 def index(request):
-    return render(request, "index.html")
+    return render(request, "index.html",)
 
 @login_required(login_url="/login/")
 def pages(request):

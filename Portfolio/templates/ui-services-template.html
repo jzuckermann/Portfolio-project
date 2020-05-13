@@ -1,0 +1,155 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Our Services {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card ">
+      <div class="card-header">
+        <h4 class="card-title"> Our Services </h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table tablesorter " id="">
+            <thead class=" text-primary"> <!title row for table.->
+              <tr>
+                <th>
+                  Package Name
+                </th>
+                <th>
+                  Description
+                </th>
+                <th>
+                  Travel Distance
+                </th>
+                <th class="text-center">
+                  Base Cost
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr> <! Most expensive Wedding Package ->
+                <td>
+                  Wedding Package i
+                </td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                </td>
+                <td>
+                  Travel distance in excess of 75km
+                </td>
+                <td class="text-center">
+                  $$$
+                </td>
+              </tr>
+              <tr> <! Most expensive Wedding Package less 75km->
+                <td>
+                  Wedding Package i
+                </td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                </td>
+                <td>
+                  Travel distance less than 75km
+                </td>
+                <td class="text-center">
+                  $$$
+                </td>
+              </tr>
+              <tr> <! Second most expensive Wedding Package ->
+                <td>
+                  Wedding Package ii
+                </td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                </td>
+                <td>
+                  Travel distance in excess of 75km
+                </td>
+                <td class="text-center">
+                  $$$
+                </td>
+              </tr>
+              <tr> <! Second most expensive Wedding Package less 75km->
+                <td>
+                  Wedding Package ii
+                </td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                </td>
+                <td>
+                  Travel distance less than 75km
+                </td>
+                <td class="text-center">
+                  $$$
+                </td>
+              </tr>
+              <tr> <! Least expensive Wedding Package ->
+                <td>
+                  Wedding Package iii
+                </td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                </td>
+                <td>
+                  Travel distance in excess of 75km
+                </td>
+                <td class="text-center">
+                  $$$
+                </td>
+              </tr>
+              <tr> <! Least expensive Wedding Package less 75km->
+                <td>
+                  Wedding Package iii
+                </td>
+                <td>
+                  <ul class="list-unstyled">
+                    <li>List Item</li>
+                    <li>List Item</li>
+                    <li>List Item</li>
+                  </ul>
+                </td>
+                <td>
+                  Travel distance less than 75km
+                </td>
+                <td class="text-center">
+                  $$$
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

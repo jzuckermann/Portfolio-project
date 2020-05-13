@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
-from .models import Job
+from jobs.models import Job
 
-def home(request):
+def homepage(request):
     jobs = Job.objects
-    return render(request, 'jobs/home.html', {'jobs':jobs})
+    return render(request, 'Portfolio/index.html', {'jobs':jobs})
 
 def theme(request):
     return render(request, 'jobs/theme.html')
