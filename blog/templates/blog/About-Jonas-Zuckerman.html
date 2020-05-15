@@ -1,0 +1,66 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Blog Home {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+
+{% endblock stylesheets %}
+
+{% block content %}
+{% load static %}
+<body data-gr-c-s-loaded="true">
+
+  <main role="main">
+
+    <form>
+      <div class="row">
+        <div class="col-md-5 pr-md-1">
+          <div class="form-group">
+            <label>UserID (disabled)</label>
+            <input type="text" class="form-control" disabled="" value="{{ request.user.id }}">
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+    <div class="album py-5">
+      <div class="container-sm">
+
+        <div class="row">
+          {% for blog in blogs.all %}
+          <div class="container">
+            <a href="{% url 'detail' blog.id %}"><h4> {{ blog.title }} </h4></a>
+            <p class="text" style="font-size:85%">{{ blog.pub_date_clean }} by <a href="{% url 'Aboutpage' %}">{{ blog.author }}</a></p>
+            <br />
+            <img class="card-img-top" style="max-width: 18rem" src="{{ blog.image.url }}" />
+              <div class="text">
+                <p>{{ blog.summary }}</p>
+              </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+
+
+  </main>
+
+</body>
+  {% endblock content %}
+
+  <!-- Specific Page JS goes HERE  -->
+  {% block javascripts %}
+
+    <script>
+      $(document).ready(function() {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+      });
+    </script>
+
+  {% endblock javascripts %}

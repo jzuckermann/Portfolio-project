@@ -13,3 +13,6 @@ def detail(request, blog_id):
 def possiblechange(request):
     blogs = Blog.objects
     return render(request, 'blog/possiblechange.html', {'blogs':blogs})
+
+def Aboutpage(request):
+    return render(request, 'blog/About-Jonas-Zuckerman.html',)
