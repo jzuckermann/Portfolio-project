@@ -14,14 +14,19 @@
 
   <main role="main">
 
-    <div class="album py-3">
+    <div class="album py-1">
       <div class="container-sm">
 
         <div class="row">
-          {% for blog in blogs.all %}
+          {% for entry in entry.all %}
           <div class="container">
-            <a href="{% url 'detail' blog.id %}"><h3> {{ blog.name }} </h3></a>
-            <p class="text">{{ blog.tagline }}</p>
+            <a href="{% url 'detailentry' entry.id %}"><h4> {{ entry.headline }} </h4></a>
+            <p class="text" style="font-size:85%">{{ entry.pub_date }} by <a href="{% url 'Aboutpage' %}">{{ entry.authors }}</a></p>
+            <br />
+            <img class="card-img-top" style="max-width: 25rem" src="{{ entry.image.url }}" />
+            <div class="text py-2">
+              <p>{{ entry.body_text }}</p>
+            </div>
           </div>
           {% endfor %}
         </div>

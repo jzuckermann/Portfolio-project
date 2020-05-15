@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 
 from .models import Blog
+from .models import Author
+from .models import Entry
 
 def allblogs(request):
     blogs = Blog.objects
@@ -15,4 +17,10 @@ def possiblechange(request):
     return render(request, 'blog/possiblechange.html', {'blogs':blogs})
 
 def Aboutpage(request):
-    return render(request, 'blog/About-Jonas-Zuckerman.html',)
+    blogs = Blog.objects
+    entry = Entry.objects
+    return render(request, 'blog/About-Jonas-Zuckerman.html', {'blogs':blogs}, {'entry':entry})
+
+def detailentry(request, entry_id):
+    detailentry = get_object_or_404(Entry, pk=entry_id)
+    return render(request, 'blog/detailentry.html', {'entry':detailentry})

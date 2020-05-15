@@ -28,6 +28,7 @@
             <div class="mb-0 text-muted">Clientele:</div>
               <ul><li>Trent African Caribbean Students' Union</li>
               <li>Trent Orientations'</li></ul>
+              <br />
           </div>
         </div>
       </div>
@@ -44,23 +45,15 @@
       </div>
 
     </div>
-    <br />
-    <h4>Latest post</h4>
-    <hr />
 
-    <div class="album py-5">
+    <div class="album py-3">
       <div class="container-sm">
 
         <div class="row">
           {% for blog in blogs.all %}
           <div class="container">
-            <a href="{% url 'detail' blog.id %}"><h4> {{ blog.title }} </h4></a>
-            <p class="text" style="font-size:85%">{{ blog.pub_date_clean }} by <a href="{% url 'Aboutpage' %}">{{ blog.author }}</a></p>
-            <br />
-            <img class="card-img-top" style="max-width: 18rem" src="{{ blog.image.url }}" />
-              <div class="text">
-                <p>{{ blog.summary }}</p>
-              </div>
+            <a href="{% url 'detail' blog.id %}"><h3> {{ blog.name }} </h3></a>
+            <p class="text">{{ blog.tagline }}</p>
           </div>
           {% endfor %}
         </div>
